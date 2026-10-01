@@ -41,8 +41,7 @@ jobs:
           PHONE: ${{ github.event.inputs.phone_number || '5511999999999' }}
           OUTPUT_DIR: ${{ github.event.inputs.output_dir || 'data/results' }}
         run: |
-          python roteiros/scanner.py "$PHONE" "$OUTPUT_DIR"
-
+        python scripts/scanner.py "$PHONE" "$OUTPUT_DIR"
       - name: Enviar resultados
         uses: actions/upload-artifact@v4
         with:
